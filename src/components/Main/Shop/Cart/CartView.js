@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     View, Text, TouchableOpacity, ScrollView,
-    Dimensions, StyleSheet, Image
+    Dimensions, StyleSheet, Image, Alert
 } from 'react-native';
 
 import global from '../../../global';
@@ -86,9 +86,29 @@ class CartView extends Component {
             }));
             const kq = await sendOrder(token, arrayDetail);
             if (kq === 'THEM_THANH_CONG') {
-                console.log('THEM THANH CONG');
+                Alert.alert(
+                    'Thông báo',
+                    'Order successfully',
+                    [
+                        { text: 'OK', }
+                    ],
+                    { cancelable: false }
+                );
+                const newCart = [];
+                this.setState({ cartArray: newCart }, 
+                    () => saveCart(this.state.cartArray)
+                );
+                // console.log('THEM THANH CONG');
             } else {
-                console.log('THEM THAT BAI', kq);
+                Alert.alert(
+                    'Thông báo',
+                    'Order false',
+                    [
+                        { text: 'OK', }
+                    ],
+                    { cancelable: false }
+                );
+                // console.log('THEM THAT BAI', kq);
             }
         } catch (e) {
             console.log(e);

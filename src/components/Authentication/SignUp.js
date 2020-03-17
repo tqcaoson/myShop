@@ -15,7 +15,7 @@ export default class SignUp extends Component {
 
     onSuccess() {
         Alert.alert(
-            'Notice',
+            'Thông báo',
             'Sign up successfully',
             [
                 { text: 'OK', onPress: this.props.gotoSignIn() }
@@ -26,7 +26,7 @@ export default class SignUp extends Component {
 
     onFail() {
         Alert.alert(
-            'Notice',
+            'Thông báo',
             'Email has been used by other',
             [
                 { text: 'OK', onPress: () => this.removeEmail.bind(this) }

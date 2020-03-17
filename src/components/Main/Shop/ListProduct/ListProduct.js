@@ -65,6 +65,7 @@ class ListProduct extends Component {
                             onRefresh={() => {
                                 this.setState({ refreshing: true });
                                 const newPage = this.state.page + 1;
+                                this.state.page++;
                                 const idType = category.id;
                                 getListProduct(idType, newPage)
                                 .then(arrProduct => {

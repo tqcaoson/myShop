@@ -34,7 +34,7 @@ class SearchView extends Component {
             <ScrollView style={wrapper}>
             {
                 arr.map(e => (
-                <View style={product}>
+                <View style={product} key={e.id}>
                     <Image source={{ uri: `${url}${e.images[0]}` }} style={productImage} />
                     <View style={mainRight}>
                         <Text style={txtName}>{toTitleCase(e.name)}</Text>
