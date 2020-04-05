@@ -17,6 +17,7 @@ class SearchView extends Component {
         global.setArraySearch = this.setSearchArray.bind(this);
     }
     setSearchArray(arrProduct) {
+        this.setState({ arr: [] });
         this.setState({ arr: this.state.arr.concat( arrProduct ) });
     }
     gotoDetail(product) {
